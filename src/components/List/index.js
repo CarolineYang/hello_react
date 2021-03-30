@@ -1,22 +1,21 @@
 import React, {Component} from 'react';
-import Proptypes from 'prop-types'
-import './index.module.css'
-import Item from "../Item";
+import Item from '../Item/index'
+
 class List extends Component {
-    static propTypes = {
-        list:Proptypes.array.isRequired
-    }
+
     render() {
-        const {list} = this.props;
+        const {list,isFirst,isLoading,err} = this.props;
         return (
-            <div className="todolist">
+            <div>
                 {
-                    list.map( (item)=> {
-                        return (<Item {...item} key={item.id} getChange={this.props.getChange} del={()=>this.props.del(item.id)}>
-                            <button>hhh</button>
-                        </Item>)
+                    isFirst?<span>欢迎你</span>:
+                        isLoading?<span>Loading...</span>:
+                            err?<span>{err}</span>:
+                    list.map((value)=>{
+                        return (<Item {...value} key={value.id}></Item>)
                     })
                 }
+
             </div>
         );
     }
