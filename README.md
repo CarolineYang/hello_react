@@ -68,3 +68,29 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### 二、github搜索案例相关知识点
+1.设计状态时要考虑全面，例如带有网络请求的组件，要考虑请求失败怎么办
+2.es6小知识点：解构赋值+重命名
+    let obj = {a:{b:1}}
+    const {a} = obj
+    const {a:{b}} = obj
+    const {a:{b:value}} = obj
+3.消息订阅与发布机制
+    1.先订阅再发布
+    2.适用于任意组件间通信
+    3、要在组件的componentWillUnmount中取消订阅 pubsub-js
+4.fetch发送请求（关注分离的设计思想）
+            // try{
+            //     const res = await fetch('https://api.github.com/search/users?q='+this.input.value);
+            //     const data = await res.json();
+            //     console.log(data)
+            // }catch(err){
+            //     console.log('请求出错',err)
+            // }
+            
+5、react-router-dom的理解
+    1、react的一个插件库
+    2、专门实现一个spa应用
+    3、基于react的项目基本都会用到此库
+    4、内置组件 BrowserRouter HashRouter Router Redirect Link NavLink Switch
