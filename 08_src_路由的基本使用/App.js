@@ -2,9 +2,8 @@ import React, {Component} from 'react';
 import {nanoid} from "nanoid";
 import {Link,BrowserRouter,Route} from 'react-router-dom'
 import './App.css'
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Header from "./components/Header"
+import Home from "./components/Home";
+import About from "./components/About";
 class App extends Component {
 
     render() {
@@ -28,7 +27,6 @@ class App extends Component {
                     <div className="col-xl-10">
                         <div className="panel">
                             <div className="panel-body">
-                                <Header a={1333}></Header>
                                 {/*注册路由*/}
                                 <Route path="/about" component={About}/>
                                 <Route path="/home" component={Home}/>

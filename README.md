@@ -94,3 +94,20 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
     2、专门实现一个spa应用
     3、基于react的项目基本都会用到此库
     4、内置组件 BrowserRouter HashRouter Router Redirect Link NavLink Switch
+### 三、路由的基本使用
+ 1、明确好界面中的导航区、展示区
+ 2、导航区的a标签改为link标签
+    <Link to='/xx'>Demo</Link>
+ 3、展示区与Router标签进行路径匹配
+    <Router path='/xx' component={Demo}  />
+ 4、<App>的最外层包裹一个<BrowserRouter>或者<HashRouter>
+ ### 四、路由组件与一般组件
+ 1、写法不同：
+    一般组件：<Demo/>
+    路由组件：<Route path='/xxx' component={Demo}/>
+ 2、存放位置不同：
+    一般组件：components
+    路由组件：pages
+ 3、接收到的props不同：
+    一般组件：写组件标签时传递了什么，就能收到什么
+    路由组件：接收到三个固定的属性：history  location match
